@@ -7,7 +7,7 @@
    - Nightly
 services:
   - postgresql
-install:
+before_script:
   - composer install
 script:
   - vendor/bin/phpunit
