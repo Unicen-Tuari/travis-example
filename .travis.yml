@@ -1,0 +1,13 @@
+ dist: default
+ sudo: required
+ language: php
+ php:
+   - 7.1.3
+   - 7.2
+   - Nightly
+services:
+  - postgresql
+before_script:
+  - composer install
+script:
+  - vendor/bin/phpunit
