@@ -10,7 +10,18 @@ services:
   - postgresql
 
 before_script:
+  - postgres psql -c 'create database travis'
+  - postgres psql -c 'create table if not exists users (
+                        name text, 
+                        lastname text, 
+                        email text, 
+                        password text, 
+                        remember_token text, 
+                        updated_at timestamp, 
+                        created_at timestamp
+                      )'
   - composer install
   - cp .env.example .env
+  - php artisan migrate
 
 script: phpunit --configuration phpunit.xml
