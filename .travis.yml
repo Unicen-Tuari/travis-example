@@ -10,7 +10,7 @@ services:
   - postgresql
 
 before_script:
-  - postgres psql -c 'create database travis'
+  - postgres psql -c 'create database travis;'
   - postgres psql -c 'create table if not exists users (
                         name text, 
                         lastname text, 
@@ -19,7 +19,7 @@ before_script:
                         remember_token text, 
                         updated_at timestamp, 
                         created_at timestamp
-                      )'
+                      );'
   - composer install
   - cp .env.example .env
   - php artisan migrate
