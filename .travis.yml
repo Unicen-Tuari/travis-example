@@ -1,0 +1,13 @@
+dist: trusty
+sudo: false
+languague: php
+php:
+  -7.1.3
+  -7.2
+  - nightly
+services:
+  -postgresql
+install:
+  -composer install
+script:
+  -docker-compose exec app vendor/bin/phpunit
