@@ -8,5 +8,7 @@ php:
   - nightly
 install:
   - composer install
+before_script:
+  - cp .env.example .env
 script:
   - vendor/bin/phpunit
