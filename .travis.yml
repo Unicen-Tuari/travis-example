@@ -1,0 +1,15 @@
+sudo: false
+language: php
+
+php:
+  - '7.1.3'
+  - '7.2'
+  - nightly
+
+services:
+  - postgresql
+
+before_script:
+  - composer install
+
+script: phpunit --configuration $DB.phpunit.xml
