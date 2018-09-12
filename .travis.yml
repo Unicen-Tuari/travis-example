@@ -11,5 +11,6 @@ services:
 
 before_script:
   - composer install
+  - cp .env.example .env
 
 script: phpunit --configuration phpunit.xml
