@@ -10,7 +10,7 @@ services:
   - postgresql
 
 before_script:
-  - psql -c 'create database travis;' -U postgres
+  - psql -c 'create database unicen-ci;' -U postgres
   - composer install
   - cp .env.example .env
   - php artisan migrate
