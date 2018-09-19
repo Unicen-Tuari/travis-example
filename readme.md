@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e1b69802bcf3441d877de89e8772a699)](https://app.codacy.com/app/ignaciojonas/travis-example_2?utm_source=github.com&utm_medium=referral&utm_content=Unicen-Tupar/travis-example&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.com/Unicen-Tupar/travis-example.svg?branch=master)](https://travis-ci.com/Unicen-Tupar/travis-example)
 [![codecov](https://codecov.io/gh/Unicen-Tupar/travis-example/branch/master/graph/badge.svg)](https://codecov.io/gh/Unicen-Tupar/travis-example)
 # Travis example
