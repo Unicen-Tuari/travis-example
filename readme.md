@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Unicen-Tupar/travis-example.svg?branch=master)](https://travis-ci.com/Unicen-Tupar/travis-example)
+[![codecov](https://codecov.io/gh/Unicen-Tupar/travis-example/branch/master/graph/badge.svg)](https://codecov.io/gh/Unicen-Tupar/travis-example)
 # Travis example
 Repositorio base con un proyecto escrito usando Laravel para practicar como configurar [Travis-CI](https://travis-ci.org/).
 
