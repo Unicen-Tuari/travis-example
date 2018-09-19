@@ -15,4 +15,6 @@ before_script:
   - psql -c 'create database travis;' -U postgres
   - php artisan migrate
 script:
-  - ./vendor/bin/phpunit
+  - vendor/bin/phpunit --coverage-clover=coverage.xml
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
