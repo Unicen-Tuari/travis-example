@@ -1,20 +1,27 @@
 dist: trusty
 sudo: required
 language: php
-
 php:
-  - 7.1.3
-  - 7.2
-  - nightly
-services:
-    -postgresql
+- 7.1.3
+- 7.2
+- nightly
+services: "-postgresql"
 install:
-  - composer install
+- composer install
 before_script:
-  - cp .env.travis .env
-  - psql -c 'create database travis;' -U postgres
-  - php artisan migrate
+- cp .env.travis .env
+- psql -c 'create database travis;' -U postgres
+- php artisan migrate
 script:
-  - vendor/bin/phpunit --coverage-clover=coverage.xml
+- vendor/bin/phpunit --coverage-clover=coverage.xml
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
+deploy:
+  provider: heroku
+  api_key:
+    secure: P/KvQl+choqFxgMLng59a1Wg7ik6RPS7L/aSROzgOTw+Wsgbnt78ogS44iZ/RKfAjwtu8p5BRSaq2MDXdwixYci4DBG2BUJOyxO1B747aqteTKj68SJwf74pFzanq96D52dxW/tme88U522gVvkQLGskH9oTF7guAyyWxszwQc3ARarz8jsqbx2iQGVvJHRGbF767JvIWxorbzJVAEfx35/xwQn2FwSOhVwT7DID8OQ4HprjvIC9ZFeAkF0rt7SzTDtm6xzJfR9bFu19Gt4wYLSiPnGbBUzYdEGnMCyQkcIC/U6rrUlPchq1fW8VSIfVHirtoXKXlmryjaD4eK6L0RGxwbI9n0dLetbAKoeBBPf1zxGQsTvryuK8adzHZ8q/ynvYEWJ8AV+/TmlSJFJPtnjNYcY3ihJhaL2GSM0wYn5FPWb6b6BmVujhhIlydDKLJUPQdd4sKa39GdZ781XU0qvyDmsSlxr9xgXrm+A+CWUU5ieGZuZQZvEfrG8I+v6IrpBQSAx54kx+jf+nZevcdgZW0l27owaOGD/nrprywSxF+3T8H7VGBYU5BWZXc8UoNC0L7oSoWykS87HUzmQBYeqvQzOCUpwNpHtXk+kBsKA1w+r2lGNAs4PLKQz1dceIPmP1oq1oIbfiV1PCZssetz20Hfn1bi56MHhSSvLDn04=
+  app: travis-unicen
+  on:
+    repo: Unicen-Tupar/travis-example
+    branch: master
+    php: 7.1.3
