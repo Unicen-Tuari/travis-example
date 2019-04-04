@@ -29,6 +29,9 @@ class User extends Authenticatable
 
     public function fullName()
     {
+      if ($this->lastname== "gomez"){
+        return "hello world";
+      }
       return "$this->lastname, $this->name";
     }
 }
